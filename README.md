@@ -15,12 +15,14 @@ PaginatedList list = new PaginatedList(totalItems, currentPage, pageSize);
 @addTagHelper *, LH.Core.Mvc.Pagination
 ```
 
+Once the tag helper has been imported, it can be added to the required view and only requires the current page and total pages to generate the required HTML.
+
 ```csharp
-<pagination Page="@Model.PageIndex" TotalPages="@Model.TotalPages">
+<pagination Page="@Model.CurrentPage" TotalPages="@Model.TotalPages">
 ```
 
-Additional route data can also be provided to the tag helper if required.
+Additional route data can also be provided to the tag helper if required. The following example illustrates an additional object being passed to the tag helper to append filter to query string for the pagination links.
 
 ```csharp
-<pagination Page="@Model.PageIndex" TotalPages="@Model.TotalPages" RouteValues="@new {}">
+<pagination page="@Model.CurrentPage" total-pages="@Model.TotalPages" route-data="@new { filter = ViewBag.Filter }"></pagination>
 ```
