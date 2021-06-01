@@ -19,7 +19,7 @@ namespace LH.Core.Mvc.Pagination.TagHelpers
 
         public int Page { get; set; }
         public int TotalPages { get; set; }
-        public object RouteValues { get; set; }
+        public object RouteData { get; set; }
 
         public PaginationTagHelper(IHtmlGenerator htmlGenerator)
         {
@@ -76,13 +76,13 @@ namespace LH.Core.Mvc.Pagination.TagHelpers
         private void CreateListItem(ref HtmlContentBuilder builder, string linkText, int pageNo, string cssClass = "")
         {
             IDictionary<string, object> result = new ExpandoObject();
-            if (RouteValues != null)
+            if (RouteData != null)
             {
-                foreach (PropertyInfo property in RouteValues.GetType().GetProperties())
+                foreach (PropertyInfo property in RouteData.GetType().GetProperties())
                 {
                     if (property.CanRead)
                     {
-                        result[property.Name] = property.GetValue(RouteValues);
+                        result[property.Name] = property.GetValue(RouteData);
                     }
                 }
             }
