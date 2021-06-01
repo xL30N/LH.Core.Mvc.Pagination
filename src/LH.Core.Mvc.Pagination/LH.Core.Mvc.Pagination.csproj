@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageId>LH.Core.Mvc.Pagination</PackageId>
+    <Version>5.0.0</Version>
+    <Authors>Leon Hancock</Authors>
+    <Company>Leon Hancock</Company>
+    <Product>LH.Core.Mvc.Pagination</Product>
+    <Description>MVC Package for pagination</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+</Project>
