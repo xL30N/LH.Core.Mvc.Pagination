@@ -42,7 +42,11 @@ namespace LH.Core.Mvc.Pagination.TagHelpers
             CreateListItem(ref builder, "Previous", previousPage, previousPageStyle);
 
             int startIndex = 1;
-            if (Page > TotalPages - 4)
+            if (TotalPages - 4 <= 0 || TotalPages - 8 <= 0)
+            {
+                startIndex = 1;
+            }
+            else if (Page > TotalPages - 4)
             {
                 startIndex = TotalPages - 8;
             }
