@@ -9,6 +9,7 @@
     <Product>LH.Core.Mvc.Pagination</Product>
     <Description>ASP.NET MVC Package for pagination</Description>
     <Copyright>Leon Hancock</Copyright>
+    <RepositoryUrl>https://github.com/xL30N/LH.Core.Mvc.Pagination</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
