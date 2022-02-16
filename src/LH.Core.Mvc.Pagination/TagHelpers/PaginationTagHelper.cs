@@ -33,12 +33,15 @@ namespace LH.Core.Mvc.Pagination.TagHelpers
             int previousPage = Page - 1;
             int nextPage = Page + 1;
 
+            string firstPageStyle = Page == 1 ? " disabled" : "";
             string previousPageStyle = Page > 1 ? "" : " disabled";
             string nextPageStyle = Page < TotalPages ? "" : " disabled";
+            string lastPageStyle = Page == TotalPages ? " disabled" : "";
 
             HtmlContentBuilder builder = new();
             builder.AppendHtml("<ul class=\"pagination\">");
 
+            CreateListItem(ref builder, "First", 1, firstPageStyle);
             CreateListItem(ref builder, "Previous", previousPage, previousPageStyle);
 
             int startIndex = 1;
@@ -67,6 +70,7 @@ namespace LH.Core.Mvc.Pagination.TagHelpers
             }
 
             CreateListItem(ref builder, "Next", nextPage, nextPageStyle);
+            CreateListItem(ref builder, "Last", TotalPages, lastPageStyle);
 
             builder.AppendHtml("</ul>");
 
