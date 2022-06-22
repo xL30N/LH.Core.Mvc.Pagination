@@ -36,7 +36,7 @@ namespace LH.Core.Mvc.Pagination.TagHelpers
             string firstPageStyle = Page == 1 ? " disabled" : "";
             string previousPageStyle = Page > 1 ? "" : " disabled";
             string nextPageStyle = Page < TotalPages ? "" : " disabled";
-            string lastPageStyle = Page == TotalPages ? " disabled" : "";
+            string lastPageStyle = Page >= TotalPages ? " disabled" : "";
 
             HtmlContentBuilder builder = new();
             builder.AppendHtml("<ul class=\"pagination\">");
